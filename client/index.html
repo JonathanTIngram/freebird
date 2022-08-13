@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" id="freebird" onclick="playSound('freebird.mp3')">
+
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keep it going</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.min.css">
+</head>
+<body>
+
+    <h1 style="text-align: center;">Tap for Rat</h1>
+
+    <div id="rat">
+
+    
+        <script>
+            function playSound(soundfile) {
+                document.getElementById("freebird").innerHTML= "<embed src=\"" +soundfile+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
+                var link = document.createElement('link');
+                link.rel = "stylesheet";
+                link.type = "text/css";
+                link.href = "https://bootswatch.com/5/darkly/bootstrap.min.css";
+                let max = 14;
+                let ratNum = Math.floor(Math.random() * max);
+                let loadRat = `spinningRats/rat${ratNum}.gif`;
+                let saf = new Audio("freebird.mp3")
+                saf.play()
+                document.body.style.verticalAlign = "middle";
+                document.body.style.background = `#f3f3f3 url(${loadRat}) no-repeat right top`;
+
+                document.body.style.backgroundSize= "cover";
+                document.body.style.backgroundColor= 'black';
+            }
+        </script>
+
+    </div>
+
+
+    <!-- <img src="https://c.tenor.com/aaEMtGfZFbkAAAAC/rat-spinning.gif" style="width: 50%" alt="this slowpoke moves"  width="250" /> -->
+    
+</body>
+</html>
